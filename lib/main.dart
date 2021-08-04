@@ -1,4 +1,5 @@
-import 'package:fitness_app/widgets/workoutList.dart';
+import 'package:fitness_app/repo/workout.dart';
+import 'package:fitness_app/ui/elements.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -47,8 +48,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -66,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
-        child: WorkoutListView(workouts: []),
+        child: WorkoutListView(workouts: testWorkouts),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
