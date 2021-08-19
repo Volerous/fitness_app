@@ -38,31 +38,34 @@ class Exercise {
 class Step {}
 
 class Workout {
-  List<Exercise> exercises = [];
+  // List<Exercise> exercises = [];
+  Map<String, List<Exercise>> rotations = {};
   String name;
-  Workout({this.exercises = const [], required this.name});
+  Workout({required this.name, this.rotations = const {}});
 }
 
 List<Workout> testWorkouts = [
-  Workout(name: "Regular", exercises: [
-    Exercise(
-        title: "Curls",
-        weight: Weight(value: 10.0, type: WeightType.PERCENT),
-        reps: 12),
-    Exercise(
-        title: "Curls",
-        weight: Weight(value: 10.0, type: WeightType.PERCENT),
-        reps: 12),
-    Exercise(
-        title: "Curls",
-        weight: Weight(value: 10.0, type: WeightType.PERCENT),
-        reps: 12),
-  ]),
-  Workout(name: "StrongLifts", exercises: [
-    Exercise(
-        title: "Curls",
-        // sets: 5,
-        weight: Weight(value: 10.0, type: WeightType.KILOS),
-        reps: 5)
-  ]),
+  Workout(name: "Regular", rotations: {
+    "A": [
+      Exercise(
+          title: "Curls",
+          weight: Weight(value: 10.0, type: WeightType.PERCENT),
+          reps: 12),
+      Exercise(
+          title: "Curls",
+          weight: Weight(value: 10.0, type: WeightType.PERCENT),
+          reps: 12),
+      Exercise(
+          title: "Curls",
+          weight: Weight(value: 10.0, type: WeightType.PERCENT),
+          reps: 12),
+    ]
+  }),
+  // Workout(name: "StrongLifts", exercises: [
+  //   Exercise(
+  //       title: "Curls",
+  //       // sets: 5,
+  //       weight: Weight(value: 10.0, type: WeightType.KILOS),
+  //       reps: 5)
+  // ]),
 ];
